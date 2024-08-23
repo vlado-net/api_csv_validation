@@ -56,12 +56,6 @@ The script performs the following actions:
 ## Troubleshooting
 
 - **Permission Denied**: If you encounter a "Permission denied" error, make sure the script is executable using `chmod +x script.sh`.
-- **jq Not Found**: If `jq` is not installed, you can install it using Homebrew:
-
-  ```bash
-  brew install jq
-  ```
-
 - **File Not Found**: Ensure that the `data_source.csv` file is located in the same directory as the script or provide the correct path to the file in the script.
 
 ## Continuous Integration/Continuous Deployment (CI/CD)
