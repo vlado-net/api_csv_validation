@@ -63,3 +63,25 @@ The script performs the following actions:
   ```
 
 - **File Not Found**: Ensure that the `data_source.csv` file is located in the same directory as the script or provide the correct path to the file in the script.
+
+## Continuous Integration/Continuous Deployment (CI/CD)
+
+Inside the `.github/workflows` directory, a file named `validate-data.yml` is located.
+
+## Explanation of Workflow
+
+**Triggering Events**: The workflow is triggered on every push or pull request to the `master` branch.
+
+**Job Definition**: The validate job runs on the ubuntu-latest environment.
+
+**Steps:** 
+1. **Checkout the Repository**: Uses the `actions/checkout@v3` action to clone your repository.
+2. **Set up `jq`**: Installs `jq` on the runner.
+3. **Run the Validation Script**: Grants execution permission to `script.sh` file and runs it with an argument (e.g., 2). 
+
+GitHub Actions will automatically run the workflow whenever a push or pull request is made to `master` branch.
+
+**Monitoring**: GitHub Actions provides a detailed log for each workflow run, allowing to monitor and debug any issues.
+
+**Notifications**: Can be configured for failed runs so that the team is alerted to the issues immediately.
+
